@@ -63,11 +63,8 @@ def update_stock(ticker):
     insert = f"INSERT INTO Stocks (Stock, Sector, Industry, DividendYield, ShortPercentOfFloat, OutstandingShares) " \
              f"VALUES ('{ticker}', '{sector}', '{industry}', {dividendYield}, {shortPercentOfFloat}, {sharesOutstanding});"
 
-    print("Deleting Stock Prices")
     cur.execute(f"DELETE FROM StockPrices WHERE Stock='{ticker}';")
-    print("Deleting Stock Data")
     cur.execute(f"DELETE FROM Stocks WHERE Stock='{ticker}'; ")
-    print("Inserting Stock Data")
     cur.execute(insert)
     conn.commit()
     conn.close()
