@@ -1,6 +1,6 @@
 # ScreenShots
 ## The Main View
-![Image 1](screenshot_1.png)
+![Image 1](https://github.com/areed2017/BullishPaperStocks/blob/main/Screenshot_1.png?raw=true)
 
 ## The Investing View
-![Image 2](screenshot_2.png)
+![Image 2](https://github.com/areed2017/BullishPaperStocks/blob/main/Screenshot_2.png?raw=true)
