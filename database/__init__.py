@@ -7,7 +7,7 @@ import yfinance as yf
 def create_connection():
     con = None
     try:
-        con = lite.connect('../database/stock.db')
+        con = lite.connect('database/stock.db')
     except lite.Error as e:
         print(e)
     return con
@@ -79,8 +79,8 @@ if __name__ == '__main__':
 # if __name__ == '__main__':
     # conn = create_connection()
     # cur = conn.cursor()
-    # for filename in os.listdir('../short_data'):
-    #     with open(f'../short_data/{filename}') as file:
+    # for filename in os.listdir('short_data'):
+    #     with open(f'short_data/{filename}') as file:
     #         for line in file:
     #             if 'Symbol' in line:
     #                 continue

@@ -5,7 +5,7 @@ from datetime import datetime
 def create_connection():
     con = None
     try:
-        con = lite.connect('../database/stock.db')
+        con = lite.connect('database/stock.db')
     except lite.Error as e:
         print(e)
     return con
