@@ -18,6 +18,13 @@ def insert_stock_price(ticker, date: datetime, open_, high, low, close, volume):
 
 
 def build_insert_stock_price(ticker, date: datetime, open_, high, low, close, volume):
+    try:
+        int(high)
+        int(low)
+        int(close)
+        int(volume)
+    except Exception:
+        return ""
     return f"('{ticker}', {date.year}, {date.month}, {date.day}, {date.hour}, {date.minute}, {open_}, {high}, {low}, {close}, {volume}),"
 
 
@@ -58,7 +65,11 @@ def update_stock(ticker):
     if dividendYield is None:
         dividendYield = 0.0
     shortPercentOfFloat = data.info['shortPercentOfFloat']
+    if shortPercentOfFloat is None:
+        shortPercentOfFloat = 0.0
     sharesOutstanding = data.info['sharesOutstanding']
+    if sharesOutstanding is None:
+        sharesOutstanding = 0.0
 
     insert = f"INSERT INTO Stocks (Stock, Sector, Industry, DividendYield, ShortPercentOfFloat, OutstandingShares) " \
              f"VALUES ('{ticker}', '{sector}', '{industry}', {dividendYield}, {shortPercentOfFloat}, {sharesOutstanding});"
@@ -71,22 +82,22 @@ def update_stock(ticker):
     update_stock_prices(ticker)
 
 
-if __name__ == '__main__':
-    ticker = "PINS"
-    update_stock(ticker)
-
-
 # if __name__ == '__main__':
-    # conn = create_connection()
-    # cur = conn.cursor()
-    # for filename in os.listdir('short_data'):
-    #     with open(f'short_data/{filename}') as file:
-    #         for line in file:
-    #             if 'Symbol' in line:
-    #                 continue
-    #             data = line.strip().split(',')
-    #             if len(data) < 3:
-    #                 continue
-    #             cur.execute(f"INSERT INTO Shorts (Stock, ShortVolume, Date) VALUES ('{data[1]}', {data[2]}, '{data[0]}');")
-    # conn.commit()
+#     ticker = "PINS"
+#     update_stock(ticker)
+#
+
+if __name__ == '__main__':
+    conn = create_connection()
+    cur = conn.cursor()
+    for filename in os.listdir('../short_data'):
+        with open(f'../short_data/{filename}') as file:
+            for line in file:
+                if 'Symbol' in line:
+                    continue
+                data = line.strip().split(',')
+                if len(data) < 3:
+                    continue
+                cur.execute(f"INSERT INTO Shorts (Stock, ShortVolume, Date) VALUES ('{data[1]}', {data[2]}, '{data[0]}');")
+    conn.commit()
 

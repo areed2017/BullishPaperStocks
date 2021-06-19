@@ -1,10 +1,9 @@
 import numpy
 import pyqtgraph
 from PyQt5 import Qt
-from PyQt5.QtCore import QTime
-
 from PyQt5.QtWidgets import *
-from pyqtgraph import PlotWidget, plot, BarGraphItem, AxisItem, mkPen
+from pyqtgraph import PlotWidget, BarGraphItem, AxisItem, mkPen
+
 from UI.Styles import BODY, HEADER, Colors, BUY_BUTTON, SELL_BUTTON, Refresh_BUTTON
 from UI.util.Stock import *
 from database import update_stock

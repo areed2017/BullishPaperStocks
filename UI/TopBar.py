@@ -18,7 +18,7 @@ class TopBar(QWidget):
         self.layout.setSpacing(0)
 
         self.title = QLabel()
-        self.title.setPixmap(QPixmap('imgs/logo.png'))
+        self.title.setPixmap(QPixmap('UI/imgs/logo.png'))
         self.title.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         self.layout.addWidget(self.title)
         for i in range(20):
@@ -31,9 +31,9 @@ class TopBar(QWidget):
         self.add_buttons()
 
     def add_buttons(self):
-        icon_min = QIcon("imgs/min.png")
-        icon_max = QIcon("imgs/max.png")
-        icon_close = QIcon("imgs/close.png")
+        icon_min = QIcon("UI/imgs/min.png")
+        icon_max = QIcon("UI/imgs/max.png")
+        icon_close = QIcon("UI/imgs/close.png")
 
         self.minimize = QToolButton()
         self.minimize.setStyleSheet(TOP_BAR_BUTTON)

@@ -1,4 +1,5 @@
 from PyQt5 import Qt
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import *
 
 from UI.Styles import NAVIGATION, BUTTON, BUTTON_SELECTED, SEARCH_BAR
@@ -30,9 +31,17 @@ class Navigation(QWidget):
         self.add_portfolio_button()
         self.space()
         # self.add_analysis_button()
-        for i in range(30):
+        for i in range(15):
             label = QLabel("")
             self.layout.addWidget(label)
+
+        self.logo = QLabel()
+        self.logo.setFixedWidth(300)
+        self.logo.setFixedHeight(300)
+        self.logo.setScaledContents(True)
+        self.logo.setPixmap(QPixmap('UI/imgs/logo_square.png'))
+        # self.logo.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        self.layout.addWidget(self.logo)
 
     def space(self):
         label = QLabel("")

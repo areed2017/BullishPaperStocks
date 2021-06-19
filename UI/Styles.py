@@ -28,13 +28,7 @@ border-bottom: 4px solid {Colors.SHADOW1};
 
 # background-color: {Colors.C2};
 NAVIGATION = f"""
-background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,
-                                stop: 0 {QColor(Colors.C2).darker(115).name()},
-                                stop: 0.1 {QColor(Colors.C2).lighter(100).name()},
-                                stop: 0.2 {QColor(Colors.C2).lighter(155).name()},
-                                stop: 0.8 {QColor(Colors.C2).lighter(155).name()},
-                                stop: 0.9 {QColor(Colors.C2).lighter(100).name()}, 
-                                stop: 1.0 {QColor(Colors.C2).darker(115).name()});
+background-color: {Colors.C2};
 padding: 0;
 margin: 0;
 border-right: 4px solid {Colors.SHADOW2};
@@ -81,6 +75,13 @@ color: {Colors.C4};
 font-weight: bold;
 font-size: 26px;
 text-decoration: underline;
+background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,
+                                stop: 0 {QColor(Colors.C2).darker(115).name()},
+                                stop: 0.05 {QColor(Colors.C2).lighter(100).name()},
+                                stop: 0.1 {QColor(Colors.C2).lighter(155).name()},
+                                stop: 0.9 {QColor(Colors.C2).lighter(155).name()},
+                                stop: 0.95 {QColor(Colors.C2).lighter(100).name()}, 
+                                stop: 1.0 {QColor(Colors.C2).darker(115).name()});
 {BUTTON_BORDER}
 """
 
