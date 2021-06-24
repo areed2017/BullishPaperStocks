@@ -3,7 +3,7 @@ from PyQt5.QtCore import QPoint
 from PyQt5.QtGui import QIcon, QPixmap, QPainter, QPen, QBrush, QColor, QLinearGradient
 from PyQt5.QtWidgets import *
 
-from UI.Styles import TOP_BAR, Colors, TOP_BAR_BUTTON
+from Styles import TOP_BAR, Colors, TOP_BAR_BUTTON
 
 
 class TopBar(QWidget):

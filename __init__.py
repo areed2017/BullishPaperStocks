@@ -3,10 +3,10 @@ from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QHBoxLayout, QVB
     QMainWindow, QSizeGrip
 import sys
 
-from UI.Body import Body
-from UI.Navigation import Navigation
-from UI.Styles import BODY
-from UI.TopBar import TopBar
+from Body import Body
+from Navigation import Navigation
+from Styles import BODY
+from TopBar import TopBar
 
 
 class Window(QMainWindow):

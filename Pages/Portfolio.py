@@ -2,9 +2,9 @@ from PyQt5 import Qt
 from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import *
 
-from UI.Styles import BODY, PORTFOLIO_CARD, HEADER, HEADER_2, TRANSACTION_CARD, HEADER_3, TABLE_STYLE
-from UI.util.Stock import get_change
-from UI.util.api import get_current_share_price, free_cash, get_portfolio
+from Styles import BODY, PORTFOLIO_CARD, HEADER, HEADER_2, TRANSACTION_CARD, HEADER_3, TABLE_STYLE
+from util.Stock import get_change
+from util.api import get_current_share_price, free_cash, get_portfolio
 
 
 class TransactionTable(QTableWidget):

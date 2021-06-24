@@ -1,8 +1,8 @@
 from PyQt5.QtWidgets import *
 
-from UI.Pages.Portfolio import Portfolio
-from UI.Pages.Prices import Prices
-from UI.Styles import BODY
+from Pages.Portfolio import Portfolio
+from Pages.Prices import Prices
+from Styles import BODY
 
 
 class Body(QWidget):

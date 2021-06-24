@@ -4,12 +4,12 @@ from PyQt5 import Qt
 from PyQt5.QtWidgets import *
 from pyqtgraph import AxisItem
 
-from UI.Pages.Graphs.IntraDayClose import IntraDayClose
-from UI.Pages.Graphs.RSIIndicator import RSIIndicator
-from UI.Pages.Graphs.Volume import Volume
-from UI.Styles import BODY, HEADER, BUY_BUTTON, SELL_BUTTON, Refresh_BUTTON
-from UI.util.Stock import *
-from UI.util.api import buy_share, sell_share, get_ticker_intra_day
+from Pages.Graphs.IntraDayClose import IntraDayClose
+from Pages.Graphs.RSIIndicator import RSIIndicator
+from Pages.Graphs.Volume import Volume
+from Styles import BODY, HEADER, BUY_BUTTON, SELL_BUTTON, Refresh_BUTTON
+from util.Stock import *
+from util.api import buy_share, sell_share, get_ticker_intra_day
 
 
 class TimeAxisItem(pyqtgraph.AxisItem):

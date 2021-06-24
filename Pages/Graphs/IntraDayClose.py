@@ -2,7 +2,7 @@ import numpy
 
 from pyqtgraph import PlotWidget, mkPen, AxisItem
 
-from UI.Styles import GRAPH, Colors
+from Styles import GRAPH, Colors
 
 
 class TimeAxisItem(AxisItem):
