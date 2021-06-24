@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import *
 
 from Styles import BODY, PORTFOLIO_CARD, HEADER, HEADER_2, TRANSACTION_CARD, HEADER_3, TABLE_STYLE
 from util.Stock import get_change
-from util.api import get_current_share_price, free_cash, get_portfolio
+from util.api import get_current_share_price, free_cash, get_portfolio, get_portfolio_value
 
 
 class TransactionTable(QTableWidget):
@@ -72,16 +72,6 @@ class Portfolio(QWidget):
         self.transaction_window()
         self.layout.addWidget(QLabel())
 
-    def calculate_value(self):
-        bank_total = 10000
-        for share in self.share_history:
-            bank_total -= share['buy_price']
-            if share['sell_price'] is not None:
-                bank_total += share['sell_price']
-            else:
-                bank_total += get_current_share_price(share['stock'])
-        return bank_total
-
     def account_header(self):
         widget = QWidget()
         self.account_layout = QHBoxLayout(widget)
@@ -120,7 +110,7 @@ class Portfolio(QWidget):
         header.setAlignment(Qt.Qt.AlignCenter)
         header.setStyleSheet(HEADER)
 
-        value = QLabel(f"${self.calculate_value()}")
+        value = QLabel(f"${get_portfolio_value()}")
         value.setAlignment(Qt.Qt.AlignCenter)
         value.setStyleSheet(HEADER_2)
 

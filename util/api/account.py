@@ -17,5 +17,5 @@ def get_portfolio():
 
 def get_portfolio_value():
     data = requests.get(f'http://127.0.0.1:8000/account/portfolio_value').json()
-    return data['data']
+    return float(data['value'])
 
